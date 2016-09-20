@@ -17,3 +17,14 @@ $ docker run -p 80:80 -d -t nagios-docker
 $ docker ps  # note the container id
 $ docker exec -it <container_id> bash
 ```
+
+The container services should start automatically. You should then be able to access nagios via the IP of your local docker instance on port 80, e.g.
+
+> http://192.168.99.1/nagios
+
+The default username and password for the nagios http interface is set in the Dockerfile, as 
+
+> username:  nagiosadmin
+> password:  password
+
+
