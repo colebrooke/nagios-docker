@@ -10,11 +10,12 @@ MAINTAINER Justin Miller <justin@mycomputer.me.uk>
 
 
 RUN apt-get update
-RUN apt-get install sudo
-#### non-interactive mysql install
-RUN echo "mysql-server-5.7 mysql-server/root_password password root" | sudo debconf-set-selections
-RUN echo "mysql-server-5.7 mysql-server/root_password_again password root" | sudo debconf-set-selections
-RUN apt-get -y install mysql-server-5.7
+RUN apt-get install sudo net-tools lsof iputils-ping
+
+##### non-interactive mysql install
+#RUN echo "mysql-server-5.7 mysql-server/root_password password root" | sudo debconf-set-selections
+#RUN echo "mysql-server-5.7 mysql-server/root_password_again password root" | sudo debconf-set-selections
+#RUN apt-get -y install mysql-server-5.7
 
 RUN apt-get install -y -q	vim \
 				apache2 \
@@ -23,17 +24,16 @@ RUN apt-get install -y -q	vim \
 				build-essential \
 				php7.0 \
 				php7.0-gd \
-				php7.0-mysql \
 				wget \
 				unzip \
 				libgd2-xpm-dev \
 				libapache2-mod-php7.0 
 				#postfix \
 				#mailutils 
-
+				#php7.0-mysql \
 #### set up mysql
-RUN mkdir -p /opt/mysql/mysql/data/
-RUN mysqld --initialize-insecure --basedir=/opt/mysql/mysql --datadir=/opt/mysql/mysql/data 
+#RUN mkdir -p /opt/mysql/mysql/data/
+#RUN mysqld --initialize-insecure --basedir=/opt/mysql/mysql --datadir=/opt/mysql/mysql/data 
 
 #### add user & group
 RUN useradd nagios
