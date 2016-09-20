@@ -2,7 +2,7 @@
 
 FROM ubuntu:16.04
 
-MAINTAINER Justin Miller <justin@concrete.cc>
+MAINTAINER Justin Miller <justin@mycomputer.me.uk>
 
 ### TODO:
 ### ssl, configurations files potentially on the host rather than in the container
