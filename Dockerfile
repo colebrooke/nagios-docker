@@ -90,6 +90,9 @@ RUN chmod +x /usr/local/nagios/start-services.sh
 #### copy localhost checks into the container
 COPY objects/localhost.cfg /usr/local/nagios/etc/objects/localhost.cfg
 
+#### list exposed ports
+EXPOSE 80
+
 #### service startup commands
 #### requires && tailf otherwise the container will exit
 ENTRYPOINT /usr/local/nagios/start-services.sh && tailf /usr/local/nagios/var/nagios.log
