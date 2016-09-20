@@ -1,4 +1,5 @@
-** Nagios 4 docker build **
+Nagios 4 docker build 
+---------------------
 
 This project builds a container for nagios4, based on a standard Ubuntu 16:04 container.
 
